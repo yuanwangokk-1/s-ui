@@ -1,4 +1,4 @@
-```
+```json
 https://github.com/alireza0/s-ui/
 ```
 
@@ -16,7 +16,7 @@ https://github.com/alireza0/s-ui/
 
 **If you think this project is helpful to you, you may wish to give a**:star2:
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alireza7)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/)](https://www.buymeacoffee.com/)
 
 - USDT (TRC20): `TYTq73Gj6dJ67qe58JVPD9zpjW2cc9XgVz`
 
