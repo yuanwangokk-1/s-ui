@@ -1,8 +1,3 @@
-```json
-https://github.com/alireza0/s-ui/
-```
-
-
 # S-UI
 **An Advanced Web Panel • Built on SagerNet/Sing-Box**
 
@@ -16,7 +11,7 @@ https://github.com/alireza0/s-ui/
 
 **If you think this project is helpful to you, you may wish to give a**:star2:
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/)](https://www.buymeacoffee.com/)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alireza7)
 
 - USDT (TRC20): `TYTq73Gj6dJ67qe58JVPD9zpjW2cc9XgVz`
 
@@ -31,6 +26,12 @@ https://github.com/alireza0/s-ui/
 | Subscription Service (link/json + info)| :heavy_check_mark: |
 | Dark/Light Theme                       | :heavy_check_mark: |
 | API Interface                          | :heavy_check_mark: |
+
+## Screenshots
+
+!["Main"](https://github.com/alireza0/s-ui-frontend/raw/main/media/main.png)
+
+[Other UI Screenshots](https://github.com/alireza0/s-ui-frontend/blob/main/screenshots.md)
 
 ## API Documentation
 
@@ -195,16 +196,16 @@ To run backend (from root folder of repository):
 
 ## Recommended OS
 
-- Ubuntu 20.04+
-- Debian 11+
-- CentOS 8+
+- Ubuntu 22.04+
+- Debian 12+
+- CentOS 9+
 - Fedora 36+
 - Arch Linux
 - Parch Linux
 - Manjaro
 - Armbian
-- AlmaLinux 9+
-- Rocky Linux 9+
+- AlmaLinux 9.5+
+- Rocky Linux 9.5+
 - Oracle Linux 8+
 - OpenSUSE Tubleweed
 

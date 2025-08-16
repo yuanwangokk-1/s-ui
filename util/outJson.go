@@ -39,10 +39,9 @@ func FillOutJson(i *model.Inbound, hostname string) error {
 	outJson["server_port"] = (*inbound)["listen_port"]
 
 	switch i.Type {
-	case "http", "socks", "mixed":
+	case "http", "socks", "mixed", "anytls":
 	case "shadowsocks":
 		shadowsocksOut(&outJson, *inbound)
-		return nil
 	case "shadowtls":
 		shadowTlsOut(&outJson, *inbound)
 	case "hysteria":
@@ -97,6 +96,9 @@ func addTls(out *map[string]interface{}, tls *model.Tls) {
 	}
 	if maxVersion, ok := tlsServer["max_version"]; ok {
 		tlsConfig["max_version"] = maxVersion
+	}
+	if certificate, ok := tlsServer["certificate"]; ok {
+		tlsConfig["certificate"] = certificate
 	}
 	if cipherSuites, ok := tlsServer["cipher_suites"]; ok {
 		tlsConfig["cipher_suites"] = cipherSuites
@@ -209,6 +211,7 @@ func trojanOut(out *map[string]interface{}, inbound map[string]interface{}) {
 }
 
 func vmessOut(out *map[string]interface{}, inbound map[string]interface{}) {
+	(*out)["alter_id"] = 0
 	delete(*out, "transport")
 	if transport, ok := inbound["transport"]; ok {
 		(*out)["transport"] = transport

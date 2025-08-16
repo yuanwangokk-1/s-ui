@@ -1,10 +1,19 @@
 name: Release S-UI
 
 on:
-  push:
-    tags:
-      - "*"
   workflow_dispatch:
+  release:
+    types: [published]
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/**'
+      - '**.sh'
+      - '**.go'
+      - 'go.mod'
+      - 'go.sum'
+      - 's-ui.service'
 
 jobs:
   build:
@@ -18,7 +27,7 @@ jobs:
           - armv5
           - 386
           - s390x
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
@@ -92,7 +101,7 @@ jobs:
           fi
 
           ### Build s-ui
-          go build -ldflags="-w -s" -tags "with_quic,with_grpc,with_ech,with_utls,with_reality_server,with_acme,with_gvisor" -o sui main.go
+          go build -ldflags="-w -s" -tags "with_quic,with_grpc,with_utls,with_acme,with_gvisor" -o sui main.go
 
           mkdir s-ui
           cp sui s-ui/
@@ -102,8 +111,15 @@ jobs:
       - name: Package
         run: tar -zcvf s-ui-linux-${{ matrix.platform }}.tar.gz s-ui
 
+      - name: Upload files to Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: s-ui-linux-${{ matrix.platform }}
+          path: ./s-ui-linux-${{ matrix.platform }}.tar.gz
+
       - name: Upload
         uses: svenstaro/upload-release-action@v2
+        if: github.event_name == 'release' && github.event.action == 'published'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
