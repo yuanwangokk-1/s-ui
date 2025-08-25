@@ -1,3 +1,8 @@
+
+```json
+https://github.com/alireza0/s-ui
+```
+
 # S-UI
 **An Advanced Web Panel • Built on SagerNet/Sing-Box**
 
@@ -6,10 +11,6 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/alireza0/s-ui)](https://goreportcard.com/report/github.com/alireza0/s-ui)
 [![Downloads](https://img.shields.io/github/downloads/alireza0/s-ui/total.svg)](https://img.shields.io/github/downloads/alireza0/s-ui/total.svg)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
-```json
-https://github.com/alireza0/s-ui
-```
 
 > **Disclaimer:** This project is only for personal learning and communication, please do not use it for illegal purposes, please do not use it in a production environment
 
@@ -31,6 +32,13 @@ https://github.com/alireza0/s-ui
 | Dark/Light Theme                       | :heavy_check_mark: |
 | API Interface                          | :heavy_check_mark: |
 
+## Supported Platforms
+| Platform | Architecture | Status |
+|----------|--------------|---------|
+| Linux    | amd64, arm64, armv7, armv6, armv5, 386, s390x | ✅ Supported |
+| Windows  | amd64, 386, arm64 | ✅ Supported |
+| macOS    | amd64, arm64 | 🚧 Experimental |
+
 ## Screenshots
 
 !["Main"](https://github.com/alireza0/s-ui-frontend/raw/main/media/main.png)
@@ -50,9 +58,16 @@ https://github.com/alireza0/s-ui
 
 ## Install & Upgrade to Latest Version
 
+### Linux/macOS
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh)
 ```
+
+### Windows
+1. Download the latest Windows release from [GitHub Releases](https://github.com/alireza0/s-ui/releases/latest)
+2. Extract the ZIP file
+3. Run `install-windows.bat` as Administrator
+4. Follow the installation wizard
 
 ## Install legacy Version
 
@@ -64,6 +79,7 @@ VERSION=1.0.0 && bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui
 
 ## Manual installation
 
+### Linux/macOS
 1. Get the latest version of S-UI based on your OS/Architecture from GitHub: [https://github.com/alireza0/s-ui/releases/latest](https://github.com/alireza0/s-ui/releases/latest)
 2. **OPTIONAL** Get the latest version of `s-ui.sh` [https://raw.githubusercontent.com/alireza0/s-ui/master/s-ui.sh](https://raw.githubusercontent.com/alireza0/s-ui/master/s-ui.sh)
 3. **OPTIONAL** Copy `s-ui.sh` to /usr/bin/ and run `chmod +x /usr/bin/s-ui`.
@@ -71,6 +87,14 @@ VERSION=1.0.0 && bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui
 5. Copy *.service files to /etc/systemd/system/ and run `systemctl daemon-reload`.
 6. Enable autostart and start S-UI service using `systemctl enable s-ui --now`
 7. Start sing-box service using `systemctl enable sing-box --now`
+
+### Windows
+1. Get the latest Windows version from GitHub: [https://github.com/alireza0/s-ui/releases/latest](https://github.com/alireza0/s-ui/releases/latest)
+2. Download the appropriate Windows package (e.g., `s-ui-windows-amd64.zip`)
+3. Extract the ZIP file to a directory of your choice
+4. Run `install-windows.bat` as Administrator
+5. Follow the installation wizard
+6. Access the panel at http://localhost:2095/app
 
 ## Uninstall S-UI
 
@@ -197,21 +221,6 @@ To run backend (from root folder of repository):
 - Subscription service with ability to add external links and subscription
 - HTTPS for secure access to the web panel and subscription service (self-provided domain + SSL certificate)
 - Dark/Light theme
-
-## Recommended OS
-
-- Ubuntu 22.04+
-- Debian 12+
-- CentOS 9+
-- Fedora 36+
-- Arch Linux
-- Parch Linux
-- Manjaro
-- Armbian
-- AlmaLinux 9.5+
-- Rocky Linux 9.5+
-- Oracle Linux 8+
-- OpenSUSE Tubleweed
 
 ## Environment Variables
 
