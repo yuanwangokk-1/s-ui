@@ -1,9 +1,9 @@
-
-```json
+```https
 https://github.com/alireza0/s-ui
 ```
 
 # S-UI
+
 **An Advanced Web Panel • Built on SagerNet/Sing-Box**
 
 ![](https://img.shields.io/github/v/release/alireza0/s-ui.svg)
@@ -21,23 +21,25 @@ https://github.com/alireza0/s-ui
 - USDT (TRC20): `TYTq73Gj6dJ67qe58JVPD9zpjW2cc9XgVz`
 
 ## Quick Overview
-| Features                               |      Enable?       |
-| -------------------------------------- | :----------------: |
-| Multi-Protocol                         | :heavy_check_mark: |
-| Multi-Language                         | :heavy_check_mark: |
-| Multi-Client/Inbound                   | :heavy_check_mark: |
-| Advanced Traffic Routing Interface     | :heavy_check_mark: |
-| Client & Traffic & System Status       | :heavy_check_mark: |
-| Subscription Service (link/json + info)| :heavy_check_mark: |
-| Dark/Light Theme                       | :heavy_check_mark: |
-| API Interface                          | :heavy_check_mark: |
+
+| Features                                |      Enable?       |
+| --------------------------------------- | :----------------: |
+| Multi-Protocol                          | :heavy_check_mark: |
+| Multi-Language                          | :heavy_check_mark: |
+| Multi-Client/Inbound                    | :heavy_check_mark: |
+| Advanced Traffic Routing Interface      | :heavy_check_mark: |
+| Client & Traffic & System Status        | :heavy_check_mark: |
+| Subscription Service (link/json + info) | :heavy_check_mark: |
+| Dark/Light Theme                        | :heavy_check_mark: |
+| API Interface                           | :heavy_check_mark: |
 
 ## Supported Platforms
-| Platform | Architecture | Status |
-|----------|--------------|---------|
-| Linux    | amd64, arm64, armv7, armv6, armv5, 386, s390x | ✅ Supported |
-| Windows  | amd64, 386, arm64 | ✅ Supported |
-| macOS    | amd64, arm64 | 🚧 Experimental |
+
+| Platform | Architecture                                  | Status          |
+| -------- | --------------------------------------------- | --------------- |
+| Linux    | amd64, arm64, armv7, armv6, armv5, 386, s390x | ✅ Supported    |
+| Windows  | amd64, 386, arm64                             | ✅ Supported    |
+| macOS    | amd64, arm64                                  | 🚧 Experimental |
 
 ## Screenshots
 
@@ -50,6 +52,7 @@ https://github.com/alireza0/s-ui
 [API-Documentation Wiki](https://github.com/alireza0/s-ui/wiki/API-Documentation)
 
 ## Default Installation Information
+
 - Panel Port: 2095
 - Panel Path: /app/
 - Subscription Port: 2096
@@ -59,11 +62,13 @@ https://github.com/alireza0/s-ui
 ## Install & Upgrade to Latest Version
 
 ### Linux/macOS
+
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh)
 ```
 
 ### Windows
+
 1. Download the latest Windows release from [GitHub Releases](https://github.com/alireza0/s-ui/releases/latest)
 2. Extract the ZIP file
 3. Run `install-windows.bat` as Administrator
@@ -80,15 +85,17 @@ VERSION=1.0.0 && bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui
 ## Manual installation
 
 ### Linux/macOS
+
 1. Get the latest version of S-UI based on your OS/Architecture from GitHub: [https://github.com/alireza0/s-ui/releases/latest](https://github.com/alireza0/s-ui/releases/latest)
 2. **OPTIONAL** Get the latest version of `s-ui.sh` [https://raw.githubusercontent.com/alireza0/s-ui/master/s-ui.sh](https://raw.githubusercontent.com/alireza0/s-ui/master/s-ui.sh)
 3. **OPTIONAL** Copy `s-ui.sh` to /usr/bin/ and run `chmod +x /usr/bin/s-ui`.
 4. Extract s-ui tar.gz file to a directory of your choice and navigate to the directory where you extracted the tar.gz file.
-5. Copy *.service files to /etc/systemd/system/ and run `systemctl daemon-reload`.
+5. Copy \*.service files to /etc/systemd/system/ and run `systemctl daemon-reload`.
 6. Enable autostart and start S-UI service using `systemctl enable s-ui --now`
 7. Start sing-box service using `systemctl enable sing-box --now`
 
 ### Windows
+
 1. Get the latest Windows version from GitHub: [https://github.com/alireza0/s-ui/releases/latest](https://github.com/alireza0/s-ui/releases/latest)
 2. Download the appropriate Windows package (e.g., `s-ui-windows-amd64.zip`)
 3. Extract the ZIP file to a directory of your choice
@@ -139,7 +146,7 @@ docker compose up -d
 mkdir s-ui && cd s-ui
 docker run -itd \
     -p 2095:2095 -p 2096:2096 -p 443:443 -p 80:80 \
-    -v $PWD/db/:/usr/local/s-ui/db/ \
+    -v $PWD/db/:/app/db/ \
     -v $PWD/cert/:/root/cert/ \
     --name s-ui --restart=unless-stopped \
     alireza7/s-ui:latest
@@ -161,11 +168,13 @@ docker build -t s-ui .
    <summary>Click for details</summary>
 
 ### Build and run whole project
+
 ```shell
 ./runSUI.sh
 ```
 
 ### Clone the repository
+
 ```shell
 # clone repository
 git clone https://github.com/alireza0/s-ui
@@ -173,15 +182,16 @@ git clone https://github.com/alireza0/s-ui
 git submodule update --init --recursive
 ```
 
-
 ### - Frontend
 
 Visit [s-ui-frontend](https://github.com/alireza0/s-ui-frontend) for frontend code
 
 ### - Backend
+
 > Please build frontend once before!
 
 To build backend:
+
 ```shell
 # remove old frontend compiled files
 rm -fr web/html/*
@@ -192,6 +202,7 @@ go build -o sui main.go
 ```
 
 To run backend (from root folder of repository):
+
 ```shell
 ./sui
 ```
@@ -210,7 +221,7 @@ To run backend (from root folder of repository):
 ## Features
 
 - Supported protocols:
-  - General:  Mixed, SOCKS, HTTP, HTTPS, Direct, Redirect, TProxy
+  - General: Mixed, SOCKS, HTTP, HTTPS, Direct, Redirect, TProxy
   - V2Ray based: VLESS, VMess, Trojan, Shadowsocks
   - Other protocols: ShadowTLS, Hysteria, Hysteria2, Naive, TUIC
 - Supports XTLS protocols
@@ -229,13 +240,13 @@ To run backend (from root folder of repository):
 
 ### Usage
 
-| Variable       |                      Type                      | Default       |
-| -------------- | :--------------------------------------------: | :------------ |
-| SUI_LOG_LEVEL  | `"debug"` \| `"info"` \| `"warn"` \| `"error"` | `"info"`      |
-| SUI_DEBUG      |                   `boolean`                    | `false`       |
-| SUI_BIN_FOLDER |                    `string`                    | `"bin"`       |
-| SUI_DB_FOLDER  |                    `string`                    | `"db"`        |
-| SINGBOX_API    |                    `string`                    | -             |
+| Variable       |                      Type                      | Default  |
+| -------------- | :--------------------------------------------: | :------- |
+| SUI_LOG_LEVEL  | `"debug"` \| `"info"` \| `"warn"` \| `"error"` | `"info"` |
+| SUI_DEBUG      |                   `boolean`                    | `false`  |
+| SUI_BIN_FOLDER |                    `string`                    | `"bin"`  |
+| SUI_DB_FOLDER  |                    `string`                    | `"db"`   |
+| SINGBOX_API    |                    `string`                    | -        |
 
 </details>
 
@@ -257,4 +268,5 @@ certbot certonly --standalone --register-unsafely-without-email --non-interactiv
 </details>
 
 ## Stargazers over Time
+
 [![Stargazers over time](https://starchart.cc/alireza0/s-ui.svg)](https://starchart.cc/alireza0/s-ui)
